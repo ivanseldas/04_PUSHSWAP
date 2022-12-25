@@ -6,11 +6,11 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 21:44:22 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/19 23:21:02 by ivanisp          ###   ########.fr       */
+/*   Updated: 2022/12/25 20:05:06 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "push_swap.h"
+#include "../push_swap.h"
 
 void	swap_operator(int *stack, int *size)
 {

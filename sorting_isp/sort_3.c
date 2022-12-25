@@ -6,11 +6,11 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 21:15:20 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/19 23:26:59 by ivanisp          ###   ########.fr       */
+/*   Updated: 2022/12/25 20:07:54 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "../push_swap.h"
 
 void	sort_3(int *stack_a, int *stack_b, int *size_a, int *size_b)
 {

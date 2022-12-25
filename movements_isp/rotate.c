@@ -6,11 +6,11 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:26:16 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/19 23:22:12 by ivanisp          ###   ########.fr       */
+/*   Updated: 2022/12/25 20:04:55 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rotate_operator(int *stack, int *size)
 {

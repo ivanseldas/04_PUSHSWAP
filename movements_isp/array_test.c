@@ -1,19 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_and_exit.c                                   :+:      :+:    :+:   */
+/*   array_test.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 18:19:38 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/19 18:21:32 by ivanisp          ###   ########.fr       */
+/*   Created: 2022/12/20 22:59:00 by ivanisp           #+#    #+#             */
+/*   Updated: 2022/12/25 20:05:27 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../push_swap.h"
 
-void	error_and_exit(void)
+int	main(void)
 {
-	write (1, "Error\n", 6);
-	exit (0);
+	int	*arr;
+	int	i;
+	int	size;
+
+	arr = (int *)malloc(sizeof(int) * 4);
+	arr[0] = 3;
+	arr[1] = -20;
+	arr[2] = 1;
+	arr[3] = -3;
+	size = sizeof(arr) / sizeof(arr[0]);
+	printf("Array size is %i\n", size);
+	while (arr[i])
+	{
+		printf("%i, ", arr[i]);
+		i++;
+	}
+	printf("\n");
+	printf("Total of integers = %i\n", i);
+	return (0);
 }

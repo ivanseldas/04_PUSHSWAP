@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_initial_errors.c                             :+:      :+:    :+:   */
+/*   utils_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:57:28 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/19 18:23:13 by ivanisp          ###   ########.fr       */
+/*   Updated: 2022/12/25 19:44:33 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_duplicates(int *stack_a, int argc)
+void	error_and_exit(void)
+{
+	write (1, "Error\n", 6);
+	exit (0);
+}
+
+void	check_duplicates(int *stack_a, int argc)
 {
 	int	i;
 	int	j;
@@ -26,16 +32,15 @@ int	check_duplicates(int *stack_a, int argc)
 			if (stack_a[i] == stack_a[j] && i != j)
 			{
 				write (1, "Error\n", 6);
-				return (-1);
+				free_stacks(stack_a, stack_b, size_a, size_b);
 			}
 			j++;
 		}
 		i++;
 	}
-	return (0);
 }
 
-int	limits_int_check(int *stack_a, int argc)
+void	limits_int_check(int *stack_a, int argc)
 {
 	int	i;
 
@@ -45,11 +50,10 @@ int	limits_int_check(int *stack_a, int argc)
 		if (stack_a[i] > 2147483647 || stack_a[i] < -214783648)
 		{
 			write (1, "Error\n", 6);
-			return (0);
+			free_stacks(stack_a, stack_b, size_a, size_b);
 		}
 		i++;
 	}
-	return (0);
 }
 
 void	doublecheck_numbers(int argc, char **argv)
@@ -74,4 +78,11 @@ void	doublecheck_numbers(int argc, char **argv)
 		}
 		i++;
 	}
+}
+
+void	check_errors(int *stack_a, int argc, char **argv)
+{
+	doublecheck_numbers(argc, argv);
+	check_duplicates(stack_a, argc);
+	limits_int_check(stack_a, argc);
 }

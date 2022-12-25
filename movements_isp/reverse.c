@@ -6,11 +6,11 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 23:09:00 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/19 23:18:04 by ivanisp          ###   ########.fr       */
+/*   Updated: 2022/12/25 20:04:45 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	reverse_operator(int *stack, int *size)
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_isp.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:34:30 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/12 01:48:36 by ivanisp          ###   ########.fr       */
+/*   Updated: 2022/12/25 19:53:21 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,90 +15,47 @@
 #include <stdlib.h>
 #include <string.h>
 
-void	doublecheck(int argc, char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{
-			if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != '-')
-			{
-				write (1, "Error\n", 6);
-				exit (0);
-			}
-			if (argv[i][j] == '-' && (argv[i][j + 1] < '0' || argv[i][j + 1] > '9'))
-			{
-				write (1, "Error\n", 6);
-				exit (0);
-			}
-			if (argv[i][j] >= '0' && argv[i][j] <= '9' && argv[i][j + 1] == '-')
-			{
-				write (1, "Error\n", 6);
-				exit (0);
-			}
-			j++;
-		}
-		i++;
-	}
-}
-
-int	*stack_numbers(int argc, char **argv)
-{
-	int	i;
-	int	*list;
-
-	list = (int *)malloc(sizeof(int) * argc);
-	if (!list)
-		return (0);
-	i = 0;
-	while (i < argc - 1)
-	{
-		list[i] = atoi(argv[i + 1]);
-		i++;
-	}
-	list[i] = '\0';
-	return (list);
-}
-
-int	already_sorted_check(int *stack_a, int argc)
-{
-	int	i;
-
-	i = argc - 2;
-	printf("**La lista tiene <%i> numeros**\n\n", i + 1);
-	while (i > 0)
-	{
-		if (stack_a[i] < stack_a[i - 1])
-			return (0);
-		i--;
-	}
-	return (1);
-}
-
 int	main(int argc, char **argv)
 {
-	int	i;
 	int	*stack_a;
-	int	boolean;
+	int	*stack_b;
+	int	*size_a;
+	int	*size_b;
 
-	doublecheck(argc, argv);
-	stack_a = stack_numbers(argc, argv);
-	boolean = already_sorted_check(stack_a, argc);
-	if (boolean == 1)
-		printf("SORTED\n");
+	size_a = (int *)malloc(sizeof(int));
+	size_b = (int *)malloc(sizeof(int));
+	stack_a = (int *)malloc(sizeof(int) * stack_size(argc, argv));
+	stack_b = (int *)malloc(sizeof(int) * stack_size(argc, argv));
+
+	// Verify malloc works
+	if (!stack_a || !stack_b || !size_a || !size_b)
+		free_stacks(stack_a, stack_b, size_a, size_b);
+
+	// Set numbers to stack & check errors
+	stack_numbers(stack_a, argc, argv);
+	check_errors(stack_a, argc, argv);
+
+	// Check if the stack is already sorted
+	if (already_sorted_check(stack_a, argc) == 1)
+		free_stacks(stack_a, stack_b, size_a, size_b);
+
+	// For stack size = 2
+	else if (stack_size(argc, argv) == 2 && stack_a[0] > stack_a[1])
+		rotate_stack_a;
+
+	// For stack size = 3
+	else if (stack_size(argc, argv) == 3)
+		sort_3(stack_a, stack_b, size_a, size_b);
+
+	// For stack size = 5
+	else if (stack_size(argc, argv) == 5)
+		sort_5(stack_a, stack_b, size_a, size_b);
+
+	// For the remaining stack sizes
 	else
-		printf("..no sorted..\n");
-	i = 0;
-	while (i < argc - 1)
-	{
-		printf("%i, ", stack_a[i]);
-		i++;
-	}
-	printf("\n");
+		sort_all(stack_a, stack_b, size_a, size_b);
+
+	// Free memory after operating (we just need to print the instructions)
+	free_stacks(stack_a, stack_b, size_a, size_b);
 	return (0);
 }
