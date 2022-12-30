@@ -6,15 +6,11 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:34:30 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/25 20:06:56 by ivanisp          ###   ########.fr       */
+/*   Updated: 2022/12/30 21:04:19 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	stack_size(int argc, char **argv)
 {

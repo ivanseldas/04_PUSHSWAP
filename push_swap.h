@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 19:57:33 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/25 20:29:39 by ivanisp          ###   ########.fr       */
+/*   Updated: 2022/12/30 18:01:19 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include<string.h>
 # include<stdio.h>
 # include<errno.h>
+# include<stdio.h>
 
 // Stack numbers
 int		stack_size(int argc, char **argv);
