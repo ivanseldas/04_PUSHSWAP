@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 17:36:51 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/01 19:33:41 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/01 20:18:02 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,8 @@ void	ft_all_positive(int *stack, int size)
 
 /*int	main(void)
 {
-	int	stack[] = {-2, 5, -256, 0, 13, 268, 57, -12, 15, -36, 99, 48, 10, -189};
-	int	*stack_temp;
-	int	len = 14;
+	int	stack[] = {-2, 5, -256, 0};
+	int	len = 4;
 	int	i;
 
 	printf("STACK ORIGINAL IS: ");
@@ -103,15 +102,14 @@ void	ft_all_positive(int *stack, int size)
 		printf(" %i,", stack[i]);
 		i++;
 	}
-	stack_temp = ft_all_positive(stack, len);
+	ft_all_positive(stack, len);
 	printf("\nSTACK CONVERTED IS: ");
 	i = 0;
 	while (i < len)
 	{
-		printf(" %i,", stack_temp[i]);
+		printf(" %i,", stack[i]);
 		i++;
 	}
 	printf("\n");
-	free(stack_temp);
 	return (0);
 }*/
