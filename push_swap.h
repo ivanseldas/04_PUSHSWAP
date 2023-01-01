@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 19:57:33 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/30 18:01:19 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/01 19:27:04 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 // Stack numbers
 int		stack_size(int argc, char **argv);
-void	stack_numbers(int *stack_a, int argc, char **argv);
+void	stack_and_check(int *stack_a, int argc, char **argv);
 void	free_stacks(int *stack_a, int *stack_b, int *size_a, int *size_b);
 
 // Errors
@@ -30,7 +30,8 @@ void	error_and_exit(void);
 void	check_duplicates(int *stack_a, int argc);
 void	limits_int_check(int *stack_a, int argc);
 void	doublecheck_numbers(int argc, char **argv);
-void	check_errors(int *stack_a, int argc, char **argv);
+void	check_errors(int *stack_a, int size);
+void	ft_all_positive(int *stack_a, int size);
 
 // Movements
 void	push_a(int *stack_a, int *stack_b, int *size_a, int *size_b);

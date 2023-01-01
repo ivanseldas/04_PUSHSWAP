@@ -6,11 +6,11 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 17:36:51 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/30 21:03:21 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/01 19:33:41 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	*ft_stack_copy(int *stack, int len)
 {
@@ -56,31 +56,37 @@ int	*ft_bubble_sort(int *stack, int len)
 	return (stack_temp);
 }
 
-int	*ft_all_positive(int *stack, int len)
+void	ft_all_positive(int *stack, int size)
 {
 	int	*stack_order;
-	int	*stack_return;
+	int	*stack_temp;
 	int	i;
 	int	j;
 
-	stack_return = (int *)malloc(sizeof(int) * len);
-	if (!stack_return)
-		return (0);
-	stack_order = ft_bubble_sort(stack, len);
+	stack_temp = (int *)malloc(sizeof(int) * size);
+	if (!stack_temp)
+		exit (0);
+	stack_order = ft_bubble_sort(stack, size);
 	i = 0;
-	while (i < len)
+	while (i < size)
 	{
 		j = 0;
-		while (j < len)
+		while (j < size)
 		{
 			if (stack_order[i] == stack[j])
-				stack_return[j] = i + 1;
+				stack_temp[j] = i + 1;
 			j++;
 		}
 		i++;
 	}
+	i = 0;
+	while (i < size)
+	{
+		stack[i] = stack_temp[i];
+		i++;
+	}
+	free(stack_temp);
 	free(stack_order);
-	return (stack_return);
 }
 
 /*int	main(void)

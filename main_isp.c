@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:34:30 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/25 19:53:21 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/01 18:21:09 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ int	main(int argc, char **argv)
 
 	// Verify malloc works
 	if (!stack_a || !stack_b || !size_a || !size_b)
+	{
 		free_stacks(stack_a, stack_b, size_a, size_b);
+		return (0);
+	}
 
 	// Set numbers to stack & check errors
-	stack_numbers(stack_a, argc, argv);
-	check_errors(stack_a, argc, argv);
+	stack_and_check(stack_a, argc, argv);
 
 	// Check if the stack is already sorted
 	if (already_sorted_check(stack_a, argc) == 1)

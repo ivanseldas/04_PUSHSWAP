@@ -6,9 +6,11 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:57:28 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/25 19:44:33 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/01 19:58:19 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 void	error_and_exit(void)
 {
@@ -16,41 +18,36 @@ void	error_and_exit(void)
 	exit (0);
 }
 
-void	check_duplicates(int *stack_a, int argc)
+void	check_duplicates(int *stack_a, int size)
 {
 	int	i;
 	int	j;
-	int	size;
 
 	i = 0;
-	size = argc - 2;
 	while (i < size)
 	{
 		j = 0;
 		while (j < size)
 		{
 			if (stack_a[i] == stack_a[j] && i != j)
-			{
-				write (1, "Error\n", 6);
-				free_stacks(stack_a, stack_b, size_a, size_b);
-			}
+				error_and_exit();
 			j++;
 		}
 		i++;
 	}
 }
 
-void	limits_int_check(int *stack_a, int argc)
+void	limits_int_check(int *stack_a, int size)
 {
 	int	i;
 
-	i = argc - 2;
-	while (i > 0)
+	i = 0;
+	while (i < size)
 	{
-		if (stack_a[i] > 2147483647 || stack_a[i] < -214783648)
+		if ((int)stack_a[i] > 2147483647 || (int)stack_a[i] < -214783648)
 		{
-			write (1, "Error\n", 6);
-			free_stacks(stack_a, stack_b, size_a, size_b);
+			error_and_exit();
+//			free_stacks(stack_a, stack_b, size_a, size_b);
 		}
 		i++;
 	}
@@ -80,9 +77,8 @@ void	doublecheck_numbers(int argc, char **argv)
 	}
 }
 
-void	check_errors(int *stack_a, int argc, char **argv)
+void	check_errors(int *stack_a, int size)
 {
-	doublecheck_numbers(argc, argv);
-	check_duplicates(stack_a, argc);
-	limits_int_check(stack_a, argc);
+	check_duplicates(stack_a, size);
+	limits_int_check(stack_a, size);
 }
