@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:59:10 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/01 19:44:08 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/02 13:50:24 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ int	main(int argc, char **argv)
 	stack_and_check(stack_a, argc, argv);
 	i = 0;
 	printf("STACK IS: ");
-	while (i < size - 1)
+	while (i < size)
 	{
 		printf(" %i,", stack_a[i]);
 		i++;
 	}
+	printf("\n");
 }
