@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:59:10 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/02 17:41:56 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/02 22:53:58 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_array(int *stack)
 }
 int	main(int argc, char **argv)
 {
-	int	i;
+//	int	i;
 	int	size;
 	int	*stack_a;
 	int	*stack_b;
@@ -41,28 +41,32 @@ int	main(int argc, char **argv)
 	*size_a = size;
 	*size_b = 0;
 	stack_and_check(stack_a, argc, argv);
-	i = 0;
-	printf("STACK_B IS: ");
-	while (i < size)
-	{
-		printf("%i ", stack_b[i]);
-		stack_b[i] = 0;
-		i++;
-	}
-	printf("\n");
-	printf("size_a = %i\nsize_b = %i\n", *size_a, *size_b);
 //	i = 0;
-	printf("STACK IS: ");
-	print_array(stack_a);
+//	printf("STACK_B IS: ");
+//	while (i < size)
+//	{
+//		printf("%i ", stack_b[i]);
+//		stack_b[i] = 0;
+//		i++;
+//	}
+//	printf("\n");
+//	printf("size_a = %i\nsize_b = %i\n", *size_a, *size_b);
+//	i = 0;
+//	printf("STACK IS: ");
+//	print_array(stack_a);
+	if (size == 2 && stack_a[0] > stack_a[1])
+		swap_a(stack_a, size_a);
 	if (size == 3)
 		sort_3(stack_a, size_a);
+	if (size == 4)
+		sort_4(stack_a, stack_b, size_a, size_b);
 	if (size == 5)
 		sort_5(stack_a, stack_b, size_a, size_b);
-	printf("STACK_A PUSHED IS: ");
-	print_array(stack_a);
-	printf("-----\n");
-	printf("STACK_B IS: ");
-	print_array(stack_b);
+//	printf("STACK_A PUSHED IS: ");
+//	print_array(stack_a);
+//	printf("-----\n");
+//	printf("STACK_B IS: ");
+//	print_array(stack_b);
 	free(stack_a);
 	free(stack_b);
 	free(size_a);
