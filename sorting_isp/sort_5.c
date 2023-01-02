@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 21:36:30 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/02 16:20:51 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/02 17:59:21 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	second_number(int *stack_a, int *stack_b, int *size_a, int *size_b)
 		reverse_a(stack_a, size_a);
 		push_a(stack_a, stack_b, size_a, size_b);
 		rotate_a(stack_a, size_a);
+		rotate_a(stack_a, size_a);
 	}
 	else if (stack_b[0] > stack_a[3])
 		push_and_rotate_a(stack_a, stack_b, size_a, size_b);
@@ -75,7 +76,7 @@ void	sort_5(int *stack_a, int *stack_b, int *size_a, int *size_b)
 	{
 		if (size_b[0] == 2)
 			first_number(stack_a, stack_b, size_a, size_b);
-		if (size_b[0] == 1)
+		else if (size_b[0] == 1)
 			second_number(stack_a, stack_b, size_a, size_b);
 	}
 }

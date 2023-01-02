@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:59:10 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/02 17:40:24 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/02 17:41:56 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	main(int argc, char **argv)
 //	i = 0;
 	printf("STACK IS: ");
 	print_array(stack_a);
-	printf("\n\n");
 	if (size == 3)
 		sort_3(stack_a, size_a);
 	if (size == 5)

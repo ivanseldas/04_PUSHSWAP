@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:00:18 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/02 17:39:32 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/02 17:49:10 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ void	push_b(int *stack_a, int *stack_b, int *size_a, int *size_b)
 	}
 	(*size_a)--;
 	stack_a[*size_a] = 0;
-	write (1, "pa\n", 3);
+	write (1, "pb\n", 3);
 }
