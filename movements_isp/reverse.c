@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 23:09:00 by ivanisp           #+#    #+#             */
-/*   Updated: 2022/12/25 20:04:45 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/02 14:25:12 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void	reverse_b(int *stack_b, int *size_b)
 void	reverse_ab(int *stack_a, int *stack_b, int *size_a, int *size_b)
 {
 	reverse_operator(stack_a, size_a);
-	reverse_operatro(stack_b, size_b);
+	reverse_operator(stack_b, size_b);
 	write (1, "rrr\n", 4);
 }
