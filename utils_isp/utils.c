@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:34:30 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/01 20:07:37 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/02 15:52:20 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ void	stack_and_check(int *stack_a, int argc, char **argv)
 
 	doublecheck_numbers(argc, argv);
 	size = argc - 1;
-	printf("size is: %i\n", size);
-	printf("STACK INITIAL IS:");
+//	printf("size is: %i\n", size);
+//	printf("STACK INITIAL IS:");
 	i = 0;
 	while (i < size)
 	{
 //	NO FILTRAR POR ATOI NUMEROS SUPERIORES A MAX INT Y MIN INT		
 		stack_a[i] = atoi(argv[i + 1]);
-		printf(" %i,", stack_a[i]);
+//		printf(" %i,", stack_a[i]);
 		i++;
 	}
-	printf("\n");
+//	printf("\n");
 	check_duplicates(stack_a, size);
 	limits_int_check(stack_a, size);
 	ft_all_positive(stack_a, size);

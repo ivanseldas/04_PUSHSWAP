@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 19:57:33 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/02 14:23:11 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/02 16:57:18 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include<stdio.h>
 # include<errno.h>
 # include<stdio.h>
+
+// To remove
+void	print_array(int *stack);
 
 // Stack numbers
 int		stack_size(int argc, char **argv);
@@ -52,5 +55,6 @@ void	swap_ab(int *stack_a, int *stack_b, int *size_a, int *size_b);
 // Sorting functions
 int		already_sorted_check(int *stack_a, int argc);
 void	sort_3(int *stack_a, int *size_a);
+void	sort_5(int *stack_a, int *stack_b, int *size_a, int *size_b);
 
 #endif
