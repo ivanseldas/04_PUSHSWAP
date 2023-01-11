@@ -6,7 +6,7 @@
 #    By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 18:46:59 by ivanisp           #+#    #+#              #
-#    Updated: 2023/01/02 22:35:16 by ivanisp          ###   ########.fr        #
+#    Updated: 2023/01/12 00:27:41 by ivanisp          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ SOURCES =	./main_test.c \
 		./utils_isp/utils_errors.c \
 		./movements_isp/push.c \
 		./movements_isp/swap.c \
-		./sorting_isp/sort_3.c \
-		./sorting_isp/sort_4_and_5.c \
-		./movements_isp/rotate.c \
-		./movements_isp/reverse.c \
-		./sorting_isp/already_sorted_check.c \
+#		./sorting_isp/sort_3.c \
+#		./sorting_isp/sort_4_and_5.c \
+#		./movements_isp/rotate.c \
+#		./movements_isp/reverse.c \
+#		./sorting_isp/already_sorted_check.c \
 #		./main_isp.c
 
 OBJECTS = $(SOURCES:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:57:28 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/01 19:58:19 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/11 22:26:11 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	limits_int_check(int *stack_a, int size)
 		if ((int)stack_a[i] > 2147483647 || (int)stack_a[i] < -214783648)
 		{
 			error_and_exit();
-//			free_stacks(stack_a, stack_b, size_a, size_b);
 		}
 		i++;
 	}

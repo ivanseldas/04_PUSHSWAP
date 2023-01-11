@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:59:10 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/02 22:53:58 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/12 00:42:21 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,13 @@ int	main(int argc, char **argv)
 	int	size;
 	int	*stack_a;
 	int	*stack_b;
-	int	*size_a;
-	int	*size_b;
 
 	size = argc - 1;
 	stack_a = (int *)malloc(sizeof(int) * size);
-	stack_b = (int *)malloc(sizeof(int) * size);
-	size_a = (int *)malloc(sizeof(int));
-	size_b = (int *)malloc(sizeof(int));
-	*size_a = size;
-	*size_b = 0;
+	stack_b = NULL;
 	stack_and_check(stack_a, argc, argv);
+	printf("Size_a = %i\n", ft_size(stack_a));
+	printf("Size_b = %i\n", ft_size(stack_b));
 //	i = 0;
 //	printf("STACK_B IS: ");
 //	while (i < size)
@@ -52,24 +48,24 @@ int	main(int argc, char **argv)
 //	printf("\n");
 //	printf("size_a = %i\nsize_b = %i\n", *size_a, *size_b);
 //	i = 0;
-//	printf("STACK IS: ");
-//	print_array(stack_a);
-	if (size == 2 && stack_a[0] > stack_a[1])
-		swap_a(stack_a, size_a);
-	if (size == 3)
-		sort_3(stack_a, size_a);
-	if (size == 4)
-		sort_4(stack_a, stack_b, size_a, size_b);
-	if (size == 5)
-		sort_5(stack_a, stack_b, size_a, size_b);
+	printf("STACK IS: ");
+	print_array(stack_a);
+	push_b(stack_a, stack_b);
+	print_array(stack_a);
+	print_array(stack_b);
+//	if (size == 2 && stack_a[0] > stack_a[1])
+//		swap_a(stack_a);
+//	if (size == 3)
+//		sort_3(stack_a);
+//	if (size == 4)
+//		sort_4(stack_a, stack_b, size_a, size_b);
+//	if (size == 5)
+//		sort_5(stack_a, stack_b, size_a, size_b);
 //	printf("STACK_A PUSHED IS: ");
 //	print_array(stack_a);
 //	printf("-----\n");
 //	printf("STACK_B IS: ");
 //	print_array(stack_b);
-	free(stack_a);
-	free(stack_b);
-	free(size_a);
-	free(size_b);
+	free_stacks(stack_a, stack_b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:34:30 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/02 15:52:20 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/12 00:40:56 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,21 @@ void	stack_and_check(int *stack_a, int argc, char **argv)
 	ft_all_positive(stack_a, size);
 }
 
-void	free_stacks(int *stack_a, int *stack_b, int *size_a, int *size_b)
+void	free_stacks(int *stack_a, int *stack_b)
 {
 	free(stack_a);
 	free(stack_b);
-	free(size_a);
-	free(size_b);
 	exit (0);
+}
+
+int	ft_size(int *stack)
+{
+	int	i;
+
+	if (!stack)
+		return (0);
+	i = 0;
+	while (stack[i] != '\0')
+		i++;
+	return (i);
 }

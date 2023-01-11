@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 17:36:51 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/01 20:18:02 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/11 23:12:22 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	*ft_bubble_sort(int *stack, int len)
 {
 	int	i;
 	int	j;
-	int	temp;
 	int	*stack_temp;
 
 	stack_temp = ft_stack_copy(stack, len);
@@ -44,16 +43,21 @@ int	*ft_bubble_sort(int *stack, int len)
 		while (i < len - 1)
 		{
 			if (stack_temp[i] > stack_temp[i + 1])
-			{
-				temp = stack_temp[i];
-				stack_temp[i] = stack_temp[i + 1];
-				stack_temp[i + 1] = temp;
-			}
+				ft_swap_temp(stack_temp, i);
 			i++;
 		}
 		j++;
 	}
 	return (stack_temp);
+}
+
+void	ft_swap_temp(int *stack_temp, int i)
+{
+	int	temp;
+
+	temp = stack_temp[i];
+	stack_temp[i] = stack_temp[i + 1];
+	stack_temp[i + 1] = temp;
 }
 
 void	ft_all_positive(int *stack, int size)
