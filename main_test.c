@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:59:10 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/12 21:41:28 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/12 22:14:39 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	main(int argc, char **argv)
 //		swap_a(stack_a);
 	if (size == 3)
 		sort_3(stack_a);
-//	if (size == 4)
-//		sort_4(stack_a, stack_b, size_a, size_b);
+	if (size == 4)
+		sort_4(stack_a, stack_b);
 //	if (size == 5)
 //		sort_5(stack_a, stack_b, size_a, size_b);
 	printf("STACK_A IS: ");
