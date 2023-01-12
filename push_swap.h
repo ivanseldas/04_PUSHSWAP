@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 19:57:33 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/12 00:25:52 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/12 21:13:50 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ void	print_array(int *stack);
 
 // Stack numbers
 int		stack_size(int argc, char **argv);
+int		ft_size(int *stack);
 void	stack_and_check(int *stack_a, int argc, char **argv);
 void	free_stacks(int *stack_a, int *stack_b);
-int		ft_size(int *stack);
+void	fill_0_stack(int *stack_a, int size);
 
 // Errors
 void	error_and_exit(void);
@@ -39,9 +40,12 @@ void	ft_all_positive(int *stack_a, int size);
 void	ft_swap_temp(int *stack_temp, int i);
 
 // Movements
+void	push_operator(int *stack_a, int *stack_b);
 void	push_a(int *stack_a, int *stack_b);
 void	push_b(int *stack_a, int *stack_b);
-int		*ft_realloc_stack(int *stack, int a);
+void	ft_add_number(int *stack);
+void	ft_remove_number(int *stack);
+void	ft_equal_stack(int *stack, int *temp, int size);
 void	reverse_operator(int *stack);
 void	reverse_a(int *stack_a);
 void	reverse_b(int *stack_b);
