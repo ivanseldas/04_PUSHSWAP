@@ -6,7 +6,7 @@
 #    By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 18:46:59 by ivanisp           #+#    #+#              #
-#    Updated: 2023/01/13 15:24:05 by ivanisp          ###   ########.fr        #
+#    Updated: 2023/01/13 17:18:15 by ivanisp          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SOURCES =	./main_test.c \
 		./movements_isp/swap.c \
 		./movements_isp/reverse.c \
 		./movements_isp/rotate.c \
-		./sorting_isp/sort_3.c \
+		./sorting_isp/sort_to_5.c \
 		./sorting_isp/already_sorted_check.c \
 #		./sorting_isp/sort_4_and_5.c \
 #		./main_isp.c
