@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 19:57:33 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/12 21:13:50 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/13 16:26:10 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ void	swap_b(int *stack_b);
 void	swap_ab(int *stack_a, int *stack_b);
 
 // Sorting functions
-int		already_sorted_check(int *stack_a, int argc);
+int		already_sorted_check(int *stack_a);
 void	sort_3(int *stack_a);
+void	sort_single(int *stack_a, int *stack_b);
 void	sort_4(int *stack_a, int *stack_b);
 void	sort_5(int *stack_a, int *stack_b);
 

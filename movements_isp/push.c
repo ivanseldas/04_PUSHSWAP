@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:00:18 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/12 21:33:26 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/13 15:20:45 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	push_operator(int *stack_a, int *stack_b)
 
 	size_a = ft_size(stack_a);
 	i = size_a;
-	printf("size = %i\n", i);
+//	printf("size = %i\n", i);
 	while (i > 0)
 	{
 		stack_a[i] = stack_a[i - 1];
 		i--;
 	}
-	print_array(stack_a);
+//	print_array(stack_a);
 	stack_a[0] = stack_b[0];
 	size_b = ft_size(stack_b);
 	i = 0;

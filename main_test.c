@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:59:10 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/12 22:14:39 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/13 16:26:25 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ int	main(int argc, char **argv)
 //	print_array(stack_b);
 //	if (size == 2 && stack_a[0] > stack_a[1])
 //		swap_a(stack_a);
+	if (already_sorted_check(stack_a) == 1)
+	{
+		free_stacks(stack_a, stack_b);
+		return (0);
+	}
 	if (size == 3)
 		sort_3(stack_a);
 	if (size == 4)
