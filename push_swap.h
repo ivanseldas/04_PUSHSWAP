@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 19:57:33 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/13 17:30:56 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/14 23:03:16 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	print_array(int *stack);
 // Stack numbers
 int		stack_size(int argc, char **argv);
 int		ft_size(int *stack);
+int		ft_atoi_pushswap(const char *str);
 void	stack_and_check(int *stack_a, int argc, char **argv);
 void	free_stacks(int *stack_a, int *stack_b);
 void	fill_0_stack(int *stack_a, int size);
@@ -33,9 +34,8 @@ void	fill_0_stack(int *stack_a, int size);
 // Errors
 void	error_and_exit(void);
 void	check_duplicates(int *stack_a, int argc);
-void	limits_int_check(int *stack_a, int argc);
 void	doublecheck_numbers(int argc, char **argv);
-void	check_errors(int *stack_a, int size);
+void	check_duplicates(int *stack_a, int size);
 void	ft_all_positive(int *stack_a, int size);
 void	ft_swap_temp(int *stack_temp, int i);
 

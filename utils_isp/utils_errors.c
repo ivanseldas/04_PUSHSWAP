@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:57:28 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/11 22:26:11 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/14 23:00:38 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,6 @@ void	check_duplicates(int *stack_a, int size)
 	}
 }
 
-void	limits_int_check(int *stack_a, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		if ((int)stack_a[i] > 2147483647 || (int)stack_a[i] < -214783648)
-		{
-			error_and_exit();
-		}
-		i++;
-	}
-}
-
 void	doublecheck_numbers(int argc, char **argv)
 {
 	int	i;
@@ -74,10 +59,4 @@ void	doublecheck_numbers(int argc, char **argv)
 		}
 		i++;
 	}
-}
-
-void	check_errors(int *stack_a, int size)
-{
-	check_duplicates(stack_a, size);
-	limits_int_check(stack_a, size);
 }

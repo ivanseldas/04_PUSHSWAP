@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 17:36:51 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/11 23:12:22 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/14 22:44:02 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,19 @@ void	ft_swap_temp(int *stack_temp, int i)
 	stack_temp[i + 1] = temp;
 }
 
+void	ft_equal_and_free(int *stack, int *stack_temp, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		stack[i] = stack_temp[i];
+		i++;
+	}
+	free(stack_temp);
+}
+
 void	ft_all_positive(int *stack, int size)
 {
 	int	*stack_order;
@@ -83,13 +96,7 @@ void	ft_all_positive(int *stack, int size)
 		}
 		i++;
 	}
-	i = 0;
-	while (i < size)
-	{
-		stack[i] = stack_temp[i];
-		i++;
-	}
-	free(stack_temp);
+	ft_equal_and_free(stack, stack_temp, size);
 	free(stack_order);
 }
 
