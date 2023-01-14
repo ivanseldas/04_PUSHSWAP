@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:34:30 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/14 23:02:48 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/14 23:27:29 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void	stack_and_check(int *stack_a, int argc, char **argv)
 	int	size;
 
 	if (argc == 2)
-	{
-		write (1, "Error\n", 6);
-		exit (0);
-	}
+		error_and_exit();
 	doublecheck_numbers(argc, argv);
 	size = argc - 1;
 	i = 0;
