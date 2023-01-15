@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 23:08:12 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/15 15:36:23 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/15 16:47:08 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,27 @@ int	get_max(int *stack)
 void	raddix_sort(int *stack_a, int *stack_b)
 {
 	int	i;
-	int	max;
-	int	bin;
+	int	j;
+	int	size;
 
-	max = get_max(stack_a);
-	printf("max num is: %i\n", max);
+	size = ft_size(stack_a);
 	i = 0;
-	bin = max > i;
-	while (bin > 0)
+	while (1)
 	{
-		bin = max > i;
+		j = 0;
+		while (j < size)
+		{
+
+			if (((stack_a[0] >> i) & 1) == 1)
+				rotate_a(stack_a);
+			else
+				push_b(stack_a, stack_b);
+			j++;
+		}
+		while (ft_size(stack_b) != 0)
+			push_a(stack_a, stack_b);
+		if (already_sorted_check(stack_a) == 1)
+			break ;
 		i++;
 	}
-	free(stack_b);
 }

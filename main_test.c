@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:59:10 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/15 16:09:03 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/15 16:45:19 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,19 @@ int	main(int argc, char **argv)
 	int	*stack_b;
 
 	size = argc - 1;
-	printf("argc es: %i\n", size);
+//	printf("argc es: %i\n", size);
 	stack_a = (int *)malloc(sizeof(int) * size + 1);
 	stack_b = (int *)malloc(sizeof(int) * size + 1);
 	stack_and_check(stack_a, argc, argv);
 	fill_0_stack(stack_b, size);
-	printf("Size_a = %i\n", ft_size(stack_a));
-	printf("Size_b = %i\n", ft_size(stack_b));
-	printf("STACK IS: ");
-	print_array(stack_a);
-	printf("STACK_A IS: ");
-	print_array(stack_a);
-	printf("STACK_B IS: ");
-	print_array(stack_b);
+//	printf("Size_a = %i\n", ft_size(stack_a));
+//	printf("Size_b = %i\n", ft_size(stack_b));
+//	printf("STACK IS: ");
+//	print_array(stack_a);
+//	printf("STACK_A IS: ");
+//	print_array(stack_a);
+//	printf("STACK_B IS: ");
+//	print_array(stack_b);
 //	i = 0;
 //	while (i < size)
 //	{
@@ -67,10 +67,10 @@ int	main(int argc, char **argv)
 		sort_5(stack_a, stack_b);
 	if (size > 5)
 		raddix_sort(stack_a, stack_b);
-//	printf("STACK_A IS: ");
-//	print_array(stack_a);
-//	printf("STACK_B IS: ");
-//	print_array(stack_b);
+	printf("STACK_A IS: ");
+	print_array(stack_a);
+	printf("STACK_B IS: ");
+	print_array(stack_b);
 	free_stacks(stack_a, stack_b);
 	return (0);
 }
