@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:34:30 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/14 23:27:29 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/15 16:06:00 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ void	stack_and_check(int *stack_a, int argc, char **argv)
 		stack_a[i] = ft_atoi_pushswap(argv[i + 1]);
 		i++;
 	}
+	stack_a[i] = 0;
+	printf("after atoi: ");
+	print_array(stack_a);
+	printf("\n");
 	check_duplicates(stack_a, size);
 	ft_all_positive(stack_a, size);
 }

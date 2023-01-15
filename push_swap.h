@@ -6,7 +6,7 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 19:57:33 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/14 23:03:16 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/15 15:23:10 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int		already_sorted_check(int *stack_a);
 void	sort_3(int *stack_a);
 void	sort_4(int *stack_a, int *stack_b);
 void	sort_5(int *stack_a, int *stack_b);
+void	raddix_sort(int *stack_a, int *stack_b);
 int		get_min(int *stack);
+int		get_max(int *stack);
 
 #endif

@@ -6,26 +6,29 @@
 /*   By: ivanisp <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 17:36:51 by ivanisp           #+#    #+#             */
-/*   Updated: 2023/01/14 22:44:02 by ivanisp          ###   ########.fr       */
+/*   Updated: 2023/01/15 16:05:50 by ivanisp          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	*ft_stack_copy(int *stack, int len)
+int	*ft_stack_copy(int *stack)
 {
 	int	*stack_temp;
 	int	i;
+	int	size;
 
-	stack_temp = (int *)malloc(sizeof(int) * len);
+	size = ft_size(stack);
+	stack_temp = (int *)malloc(sizeof(int) * size + 1);
 	if (!stack_temp)
 		return (0);
 	i = 0;
-	while (i < len)
+	while (i < size)
 	{
 		stack_temp[i] = stack[i];
 		i++;
 	}
+	stack_temp[i] = 0;
 	return (stack_temp);
 }
 
@@ -35,7 +38,7 @@ int	*ft_bubble_sort(int *stack, int len)
 	int	j;
 	int	*stack_temp;
 
-	stack_temp = ft_stack_copy(stack, len);
+	stack_temp = ft_stack_copy(stack);
 	j = 0;
 	while (j < len - 1)
 	{
